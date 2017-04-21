@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.demo.fish.R" />
+
+        <variable
+            name="entity"
+            type="com.demo.fish.app.main.entity.HomeListEntity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                fresco:actualImageUri="@{entity.iconUrl}"
+                fresco:placeholderImage="@color/colorImageDefault"
+                fresco:roundAsCircle="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{entity.name}"
+                        android:textColor="@color/colorTextNormal"
+                        android:textSize="16sp"
+                        tools:text="用户姓名" />
+
+                    <TextView
+                        android:id="@+id/tv_action"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:maxWidth="80dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:text='@{entity.followed?"更多":"关注"}'
+                        android:textColor="@color/colorDialogNormal"
+                        android:textSize="16sp"
+                        tools:text="关注" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:text="@{entity.date}"
+                        android:textColor="@color/colorTextGary"
+                        android:textSize="12sp"
+                        tools:text="12小时前" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@{entity.address}"
+                        android:textColor="@color/colorTextGary"
+                        android:textSize="12sp"
+                        tools:text="南京雨花台区紫荆花路" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{entity.desc}"
+            android:textColor="@color/colorTextNormal"
+            tools:text="影片主要讲述了高天赐是广州一个小厨师，和来自法国拥有米芝莲三颗星荣誉的名厨安保罗，厨艺各有千秋，从一开始的争锋相对，到成为惺惺相惜的好友，并联手参加‘全球美食之王’大赛夺得冠军的故事" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tv_group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:lines="1"
+                android:text="@{entity.groupName}"
+                android:textColor="@color/colorDialogNormal"
+                android:textSize="14sp"
+                tools:text="所来自的圈子" />
+
+            <TextView
+                android:id="@+id/tv_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/comment_small"
+                android:drawablePadding="4dp"
+                android:text="@{String.valueOf(entity.commentCount)}"
+                android:textColor="@color/colorTextGary"
+                tools:text="99" />
+
+            <TextView
+                android:id="@+id/tv_like_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:drawableLeft="@{entity.liked?R.drawable.like_small_selected:R.drawable.like_small_normal}"
+                android:drawablePadding="4dp"
+                android:text="@{String.valueOf(entity.likeCount)}"
+                android:textColor="@color/colorTextGary"
+                tools:text="99" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_photo"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginRight="6dp"
+            fresco:actualImageUri="@{imageUrl}"
+            fresco:placeholderImage="@color/colorImageDefault" />
+    </LinearLayout>
+</layout>

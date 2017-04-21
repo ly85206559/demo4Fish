@@ -1,0 +1,33 @@
+buildscript {
+    ext {
+        setup = [compileSdk: 25,
+                 buildTools: "25.0.2",
+                 minSdk    : 15,
+                 targetSdk : 25]
+
+        versions = [supportLib: "25.2.0",
+                    okio      : "+",
+                    okhttp3   : "+",
+                    retrofit2 : "+",
+                    fresco    : "+",
+                    rxjava    : "+",
+                    rxandroid : "+"]
+    }
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

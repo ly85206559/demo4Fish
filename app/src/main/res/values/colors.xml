@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFCC00</color>
+    <color name="colorPrimaryDark">#FFCC00</color>
+    <color name="colorAccent">#0079FF</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorHalfTransparent">#3f000000</color>
+
+    <color name="colorTextNormal">#292929</color>
+    <color name="colorTextGary">#999999</color>
+    <color name="colorBackground">#f0f0f0</color>
+    <color name="colorDialogNormal">#0079FF</color>
+    <color name="colorDialogDeep">#FF4744</color>
+
+    <!--分割线-->
+    <color name="colorDividedLine">#FFE0E0E0</color>
+
+    <color name="colorImageDefault">#dddddd</color>
+</resources>
